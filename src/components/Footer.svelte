@@ -22,7 +22,7 @@
 
     .footer {
         height: $footer-height;
-        background-color: $primary-color;
+        background-color: $secondary-color;
         color: #FFF;
         overflow: hidden;
 
@@ -62,7 +62,7 @@
                 }
 
                 &:hover {
-                    color: $accent-color;
+                    color: $primary-color;
                 }
             }
         }

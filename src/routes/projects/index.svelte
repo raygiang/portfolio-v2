@@ -33,6 +33,7 @@
 
 	.projects {
 		padding-bottom: 1rem;
+		background-color: #f5f8fc;
 
 		&__heading {
 			text-align: center;
@@ -42,7 +43,7 @@
 		}
 
 		&__wrapper {
-			padding: 1rem;
+			padding: 2rem 3rem;
 			display: flex;
 			flex-flow: row wrap;
 		}
@@ -59,20 +60,24 @@
 			min-height: calc(100vh - #{$header-height} - #{$footer-height});
 		}
 
-		@media screen and (max-width: 1000px) {
+		@media screen and (max-width: 1100px) {
 			&__projects-container {
 				grid-template-columns: 32% 32% 32%;
 				grid-column-gap: 2%;
 			}	
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 768px) {			
 			&__projects-container {
 				grid-template-columns: 49% 49%;
 			}	
 		}
 
 		@media screen and (max-width: 500px) {
+			&__wrapper {
+				padding: 2rem 1rem;
+			}
+
 			&__projects-container {
 				grid-template-columns: 100%;
 				grid-column-gap: 0;

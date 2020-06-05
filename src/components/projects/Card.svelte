@@ -12,22 +12,22 @@
 
     $border-width: 5px;
     $duration: 0.2s;
-    $border-radius: 15px;
-    $border-color: $primary-color;
-    $active-border-color: $secondary-color;
+    $active-border-color: $primary-color;
 
     .project-card {
-        border: 1px solid $border-color;
+        border: 1px solid #e1e1e1;
         padding: calc(#{$border-width} - 1px);
+        box-shadow: 0 0 12px -8px rgba(0, 0, 0, 0.8);
         min-height: 200px;
         position: relative;
         display: flex;
         flex-direction: column;
         text-decoration: none;
         transition: 0.5 all ease;
+        background-color: #FFF;
 
         &__title {
-            margin: auto 0;
+            margin: auto 0 1rem 0;
             padding: 0 0.5rem;
             text-align: center;
             color: #000;
@@ -66,7 +66,7 @@
         }
 
         &:hover, &:focus {
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.9);
 
             &:before, &:after {
                 width: 100%;

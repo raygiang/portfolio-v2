@@ -1,9 +1,12 @@
-$primary-color: #005279;
-$secondary-color: #80BFFF;
+$primary-color: #5FDBF1;
+$secondary-color: #393D46;
+$accent-color: #287EA9;
+$text-color: #606777;
 $link-color: #F9F086;
-$accent-color: #4ACC40;
-$header-height: 50px;
+$header-height: 110px;
+$mobile-header-height: 50px;
 $footer-height: 30px;
+$heading-font: 'Roboto Condensed', 'sans-serif';
 
 @mixin image-container {
     display: flex;
@@ -67,7 +70,7 @@ $footer-height: 30px;
 }
 
 @mixin ribbon-heading {
-    background-color: #53C7FF;
+    background-color: #53ced7;
     padding: 0.25rem 1rem;
     position: relative;
     margin: 0 auto 3rem;
@@ -80,7 +83,7 @@ $footer-height: 30px;
       position: absolute;
       width: 2rem;
       height: 100%;
-      border: 1rem solid #05ACFF;
+      border: 1rem solid #51bcc4;
       z-index: -1;
       transform: translateZ(-1rem);
       box-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
@@ -89,14 +92,14 @@ $footer-height: 30px;
     &:before {
       left: -1rem;
       top: 1rem;
-      border-right: 1rem solid #00699E;
+      border-right: 1rem solid #3d898f;
       clip-path: polygon(30% 50%, 0% 0%, 100% 0%, 100% 100%, 0 100%);
     }
     
     &:after {
       right: -1rem;
       top: 1rem;
-      border-left: 1rem solid #00699E;
+      border-left: 1rem solid #3d898f;
       clip-path: polygon(0% 0%, 100% 0%, 70% 50%, 100% 100%, 0 100%);
     }
 }

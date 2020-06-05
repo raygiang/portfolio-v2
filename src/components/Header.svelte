@@ -27,15 +27,17 @@
 
 <header class="header">
 	<div class="header__wrapper page-wrapper">
-		<a class="header__name" aria-label="Home Link" href=".">
-			<span>Raymond Giang</span>
-		</a>
+		<div class="header__name-container">
+			<a class="header__name header__nav-link" aria-label="Home Link" href=".">
+				Raymond Giang
+			</a>
+		</div>
 		
 		<nav class="header__main-nav">
 			<ul>
-				<li><a aria-current='{segment === undefined ? "page" : undefined}' href='.' on:click={resetMenu}>Home</a></li>
-				<li><a aria-current='{segment === "about" ? "page" : undefined}' href='about' on:click={resetMenu}>About Me</a></li>
-				<li><a rel=prefetch aria-current='{segment === "projects" ? "page" : undefined}' href='projects' on:click={resetMenu}>Projects</a></li>
+				<li><a class="header__nav-link" aria-current='{segment === undefined ? "page" : undefined}' href='.' on:click={resetMenu}>Home</a></li>
+				<li><a class="header__nav-link" aria-current='{segment === "about" ? "page" : undefined}' href='about' on:click={resetMenu}>About Me</a></li>
+				<li><a class="header__nav-link" rel=prefetch aria-current='{segment === "projects" ? "page" : undefined}' href='projects' on:click={resetMenu}>Projects</a></li>
 			</ul>
 		</nav>
 		<button class="header__hamburger-container" on:click={toggleMenu}>
@@ -48,9 +50,9 @@
 		{#if showMenu}
 			<nav class="header__mobile-nav" transition:fly={{x: 768, duration: 500}}>
 				<ul>
-					<li><a aria-current='{segment === undefined ? "page" : undefined}' href='.' on:click={resetMenu}>Home</a></li>
-					<li><a aria-current='{segment === "about" ? "page" : undefined}' href='about' on:click={resetMenu}>About Me</a></li>
-					<li><a rel=prefetch aria-current='{segment === "projects" ? "page" : undefined}' href='projects' on:click={resetMenu}>Projects</a></li>
+					<li><a class="header__nav-link" aria-current='{segment === undefined ? "page" : undefined}' href='.' on:click={resetMenu}>Home</a></li>
+					<li><a class="header__nav-link" aria-current='{segment === "about" ? "page" : undefined}' href='about' on:click={resetMenu}>About Me</a></li>
+					<li><a class="header__nav-link" rel=prefetch aria-current='{segment === "projects" ? "page" : undefined}' href='projects' on:click={resetMenu}>Projects</a></li>
 				</ul>
 			</nav>
 		{/if}
@@ -63,45 +65,64 @@
 	.header {
 		display: flex;
 		height: $header-height;
-		background-color: $primary-color;
-		padding: 0.5rem 0;
+		padding: 0.5rem 0 1rem;
 		position: relative;
+		box-shadow: 0 0 12px -8px rgba(0, 0, 0, 0.8);
 
 		&__wrapper {
 			display: flex;
+			flex-direction: column;
 			padding: 0 1rem;
 			justify-content: space-between;
 		}
 
-		a {
+		&__nav-link {
 			text-decoration: none;
-			color: #FFF;
+			color: #000;
 			
 			&[aria-current] {
-				color: $accent-color;
+				position: relative;
+
+				&:after {
+					display: block;
+					content: '';
+					position: absolute;
+					bottom: -3px;
+					width: 100%;
+					height: 3px;
+					background-color: $primary-color;
+				}
 			}
 
 			&:hover {
-				color: $link-color;
+				color: $accent-color;
 			}
 		}
 
+		&__name-container {
+			display: flex;
+		}
+
 		&__name {
-			font-size: 22px;
+			font-size: 35px;
+			font-family: $heading-font;
+			margin: 0 auto;
+			letter-spacing: 3px;
+			text-transform: uppercase;
 		}
 
 		&__main-nav {
-			flex: 1;
 			display: flex;
-			justify-content: flex-end;
+			justify-content: center;
 			
 			ul {
 				display: flex;
 
 				li {
 					list-style: none;
-					margin: auto 0 auto 1rem;
+					margin: auto 0 auto 2rem;
 					font-size: 18px;
+					text-transform: uppercase;
 					
 					&:first-child {
 						margin-left: 0;
@@ -117,17 +138,19 @@
 
 		&__hamburger-container {
 			display: none;
-			height: max-content;
 			margin: auto 0;
-			padding: 0.25rem 0.5rem;
 			background-color: transparent;
 			border: none;
 			transition: 0.3s all;
 			cursor: pointer;
+			height: 25px;
+			width: 25px;
 
 			:global(svg) {
-				font-size: 20px;
-				color: #FFF;
+				font-size: 25px;
+				color: #000;
+				width: 100%;
+				height: 100%;
 
 				&:hover {
 					color: $accent-color;
@@ -136,8 +159,31 @@
 		}
 
 		@media screen and (max-width: 768px) {
+			height: $mobile-header-height;
+			padding: 0.5rem 0;
+
+			&__wrapper {
+				flex-direction: row;
+			}
+
+			&__name-container {
+				margin: auto 0;
+			}
+
+			&__name {
+				font-size: 25px;
+				font-family: $heading-font;
+				margin: 0 auto;
+			}
+
 			&__main-nav {
 				display: none;
+			}
+
+			&__nav-link {
+				&:not(.header__name) {
+					color: #FFF;
+				}
 			}
 
 			&__hamburger-container {
@@ -150,8 +196,8 @@
 				left: 0;
 				top: 100%;
 				width: 100%;
-				height: calc(100vh - #{$header-height});
-				background-color: $primary-color;
+				height: calc(100vh - #{$mobile-header-height});
+				background-color: $secondary-color;
 
 				ul {
 					list-style: none;
@@ -160,18 +206,8 @@
 
 					li {
 						margin-bottom: 1rem;
-
-						a {
-							color: #FFF;
-							text-decoration: none;
-							font-weight: bold;
-							font-size: 20px;
-							transition: 0.5s all;
-
-							&:hover {
-								color: $accent-color;
-							}
-						}
+						text-transform: uppercase;
+						font-size: 25px;
 
 						&:last-child {
 							margin-bottom: 0;

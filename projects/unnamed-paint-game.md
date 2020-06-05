@@ -1,5 +1,5 @@
 ---
-title: Unamed Paint Game
+title: Unnamed Paint Game
 pubdate: 2020-05-31
 image: main.png
 screenshots: ["main.png", "screen1.png", "screen2.png", "screen3.png"]
