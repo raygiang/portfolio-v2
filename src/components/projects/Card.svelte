@@ -30,7 +30,7 @@
             margin: auto 0 1rem 0;
             padding: 0 0.5rem;
             text-align: center;
-            color: #000;
+            color: $secondary-color;
             font-size: 18px;
         }
 

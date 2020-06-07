@@ -3,6 +3,7 @@ title: Crossword Generator
 pubdate: 2020-06-02
 image: main.png
 screenshots: ["main.png", "screen1.png", "screen2.png", "screen3.png"]
+tags: ["React"]
 link: https://crossword-app.raymondgiang.com
 github: https://github.com/raygiang/crossword-app
 ---

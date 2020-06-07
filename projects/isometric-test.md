@@ -3,6 +3,7 @@ title: Isometric Test
 pubdate: 2020-05-23
 image: main.png
 screenshots: ["main.png", "screen1.png"]
+tags: ["Phaser", "Typescript"]
 link: https://iso-test.raymondgiang.com
 github: https://github.com/raygiang/isometric-test-game
 ---

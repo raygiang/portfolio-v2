@@ -3,6 +3,7 @@ title: Old Portfolio Site
 pubdate: 2020-05-22
 image: main.png
 screenshots: ["main.png", "screen1.png", "screen2.png", "screen3.png"]
+tags: ["React", "MongoDB", "Express", "Node"]
 link: https://old-portfolio.raymondgiang.com
 github: https://github.com/raygiang/portfolio
 ---

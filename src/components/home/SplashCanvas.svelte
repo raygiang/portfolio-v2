@@ -3,7 +3,7 @@
     import { onMount, afterUpdate } from 'svelte';
 
     let duration = 500;
-    let delay = 1500;
+    let delay = 500;
     let showGame = false;
     let mounted;
 
@@ -17,16 +17,8 @@
         canvas.width = 860;
         canvas.height = 500;
         context = canvas.getContext('2d');
-        patternReference = document.querySelector('#background-image');
-        pattern = context.createPattern(patternReference, 'repeat');
-        context.font = 'bold 4.5rem "Helvetica"';
-        context.fillStyle = pattern;
 
         context.clearRect(0, 0, canvas.width, canvas.height);
-        context.fillText('Hey there!', 30, 125);
-        context.fillText('My Name Is Raymond.', 30, 225);
-        context.fillText('I Make Websites', 30, 325);
-        context.fillText('and Games.', 30, 425);
     }
 
     const toggleGame = () => {
@@ -40,68 +32,45 @@
 
     onMount(() => {
         setTimeout(() => {
-            // initSplashCanvas();
+            initSplashCanvas();
             mounted = true;
         }, delay);
     });
 </script>
 
-{#if mounted}
-    <div class="splash-container">
-        <img id="background-image" src="background.png" alt="text texture">
-        <!-- {#if showGame} -->
-            <iframe
-                in:fade={{duration, delay}}
-                class="game-frame"
-                src="https://portfolio-game.raymondgiang.com"
-                frameborder="0"
-                title="Portfolio Game"
-            />
-        <!-- {:else}
-            <canvas class="splash-canvas" in:fade={{duration, delay}}>
-                Please enable JavaScript to View Content
-            </canvas>
-        {/if} -->
-
-        <!-- <button class="game-toggle" on:click={toggleGame}>{showGame ? 'Hide' : 'Play'}</button> -->
-    </div>
+{#if showGame}
+    <iframe
+        class="game-frame"
+        src="https://portfolio-game.raymondgiang.com"
+        frameborder="0"
+        title="Portfolio Game"
+    />
+{:else}
+    <canvas class="splash-canvas"></canvas>
 {/if}
 
 <style lang="scss">
     @import '../../style/theme.scss';
 
-    .splash-container {
-        margin: auto;
+    .game-frame {
         width: 100%;
         height: 100%;
-        max-height: 380px;
-        background-color: rgba(0, 0, 0, 1);
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
-        display: flex;
-        flex-flow: row wrap;
+        display: block;
 
-        #background-image {
-            display: none;
+        @media screen and (max-width: 2000px) {
+            min-height: calc(100vh - #{$header-height} - #{$footer-height});
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
+        @media screen and (max-width: 768px) {
+            height: auto;
         }
+    }
 
-        // .game-toggle {
-        //     @include primary-button;
-        //     margin: 1rem auto;
-        // }
-
-        // @media screen and (max-width: 768px) {
-        //     .game-toggle {
-        //         display: none;
-        //     }
-        // }
-
-        @media screen and (max-width: 600px) {
-            max-height: 250px;
-        }
+    .splash-canvas {
+        display: block;
+        background: #000;
+        max-height: calc(100vh - #{$header-height} - #{$footer-height});
+        width: 100%;
+        margin: auto 0;
     }
 </style>

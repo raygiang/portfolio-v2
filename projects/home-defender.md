@@ -3,6 +3,7 @@ title: Home Defender
 pubdate: 2020-05-27
 image: main.png
 screenshots: ["main.png", "screen1.png", "screen2.png", "screen3.png"]
+tags: ["JavaScript", "PHP", "MySQL"]
 link: https://home-defender-game.raymondgiang.com
 github: https://github.com/raygiang/tdgame
 ---

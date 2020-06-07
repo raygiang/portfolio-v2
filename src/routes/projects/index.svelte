@@ -8,37 +8,43 @@
 
 <script>
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	import Card from '../../components/projects/Card.svelte';
 
 	export let projects;
+	let mounted;
+
+	onMount(() => mounted = true);
 </script>
 
 <svelte:head>
 	<title>Raymond Giang - Projects</title>
 </svelte:head>
 
-<section class="projects" in:fade="{{duration: 500}}">
-	<div class="projects__wrapper page-wrapper">
-		<h1 class="projects__heading">Featured Projects</h1>
-		<div class="projects__projects-container">
-			{#each projects as project}
-				<Card project={project} />
-			{/each}
+{#if mounted}
+	<section class="projects" in:fade="{{duration: 500}}">
+		<div class="projects__wrapper page-wrapper">
+			<h1 class="projects__heading">Featured Projects</h1>
+			<div class="projects__projects-container">
+				{#each projects as project}
+					<Card project={project} />
+				{/each}
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+{:else}
+	<section class='projects'></section>
+{/if}
 
 <style lang="scss">
 	@import '../style/theme.scss';
 
 	.projects {
-		padding-bottom: 1rem;
-		background-color: #f5f8fc;
+		background-color: $background-color;
 
 		&__heading {
 			text-align: center;
 			padding: 0.5rem 0;
-			font-size: 30px;
 			@include ribbon-heading;
 		}
 
@@ -75,7 +81,7 @@
 
 		@media screen and (max-width: 500px) {
 			&__wrapper {
-				padding: 2rem 1rem;
+				padding: 2rem 1.5rem;
 			}
 
 			&__projects-container {

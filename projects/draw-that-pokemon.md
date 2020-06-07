@@ -3,6 +3,7 @@ title: Draw that Pokemon
 pubdate: 2020-05-28
 image: main.png
 screenshots: ["main.png", "screen1.png", "screen2.png", "screen3.png"]
+tags: ["React", "Node", "Express", "MongoDB", "PokéAPI", "Wolfram Alpha API", "DeepAI"]
 link: https://pokemon-draw.raymondgiang.com
 github: https://github.com/raygiang/pokemon-draw
 ---

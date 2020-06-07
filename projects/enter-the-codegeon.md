@@ -3,6 +3,7 @@ title: Enter the Codegeon
 pubdate: 2020-05-29
 image: main.png
 screenshots: ["main.png", "screen1.png", "screen2.png", "screen3.png", "screen4.png"]
+tags: ["PHP", "MongoDB", "JavaScript"]
 link: https://enter-the-codegeon.raymondgiang.com
 github: https://github.com/raygiang/enter-the-codegeon
 ---

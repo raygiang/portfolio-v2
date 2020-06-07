@@ -3,6 +3,7 @@ title: My Piano
 pubdate: 2020-05-24
 image: main.png
 screenshots: ["main.png", "screen1.png"]
+tags: ["HTML", "CSS", "JavaScript", "JQuery"]
 link: https://piano-project.raymondgiang.com
 github: https://github.com/raygiang/my-piano
 ---

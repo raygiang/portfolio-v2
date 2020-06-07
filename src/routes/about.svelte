@@ -1,260 +1,279 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	import IconifyIcon from '@iconify/svelte';
 
+	let mounted;
+
 	// Languages
-	import html5 from '@iconify/icons-logos/html-5';
-	import css3 from '@iconify/icons-logos/css-3';
-	import javascript from '@iconify/icons-logos/javascript';
-	import typescript from '@iconify/icons-logos/typescript-icon';
-	import cSharp from '@iconify/icons-logos/c-sharp';
-	import php from '@iconify/icons-logos/php';
-	import python from '@iconify/icons-logos/python';
-	import java from '@iconify/icons-logos/java';
+	import html5 from '@iconify/icons-simple-icons/html5';
+	import css3 from '@iconify/icons-simple-icons/css3';
+	import javascript from '@iconify/icons-simple-icons/javascript';
+	import typescript from '@iconify/icons-simple-icons/typescript';
+	import cSharp from '@iconify/icons-simple-icons/csharp';
+	import php from '@iconify/icons-simple-icons/php';
+	import python from '@iconify/icons-simple-icons/python';
+	import java from '@iconify/icons-simple-icons/java';
 
 	// Front End
-	import react from '@iconify/icons-logos/react';
-	import svelte from '@iconify/icons-logos/svelte-icon';
-	import sass from '@iconify/icons-logos/sass';
-	import jquery from '@iconify/icons-logos/jquery';
-	import bootstrap from '@iconify/icons-logos/bootstrap';
+	import react from '@iconify/icons-simple-icons/react';
+	import svelte from '@iconify/icons-simple-icons/svelte';
+	import sass from '@iconify/icons-simple-icons/sass';
+	import jquery from '@iconify/icons-simple-icons/jquery';
+	import bootstrap from '@iconify/icons-simple-icons/bootstrap';
 
 	// Back End
-	import mysql from '@iconify/icons-logos/mysql';
-	import mongodb from '@iconify/icons-logos/mongodb';
-	import strapi from '@iconify/icons-logos/strapi';
-	import keystonejs from '@iconify/icons-logos/keystonejs';
+	import mysql from '@iconify/icons-simple-icons/mysql';
+	import mongodb from '@iconify/icons-simple-icons/mongodb';
+	import strapi from '@iconify/icons-simple-icons/strapi';
+	import nginx from '@iconify/icons-simple-icons/nginx';
 
 	// Others
-	import wordpress from '@iconify/icons-logos/wordpress-icon';
-	import asp from '@iconify/icons-logos/dotnet';
-	import unity from '@iconify/icons-logos/unity';
-	import git from '@iconify/icons-logos/git-icon';
-	import npm from '@iconify/icons-logos/npm';
+	import wordpress from '@iconify/icons-simple-icons/wordpress';
+	import asp from '@iconify/icons-simple-icons/dot-net';
+	import unity from '@iconify/icons-simple-icons/unity';
+	import git from '@iconify/icons-simple-icons/git';
+	import npm from '@iconify/icons-simple-icons/npm';
 
 	const color = 'blue';
 	const width = "75px";
 	const height = "75px";
+
+	onMount(() => mounted = true);
 </script>
 
 <svelte:head>
 	<title>Raymond Giang - About</title>
 </svelte:head>
 
-<section class="about" in:fade="{{duration: 500}}">
-	<div class="about__wrapper page-wrapper">
-		<div class="about__block-intro">
-			Hi, my name is Raymond Giang. I am a developer who loves learning new things. I enjoy
-			working on all sorts of apps on my spare time, especially games. Thanks for visiting my 
-			portfolio site!
+{#if mounted}
+	<section class="about" in:fade="{{duration: 500}}">
+		<div class="about__wrapper page-wrapper">
+			<div class="about__intro-container">
+				<div class="about__intro-area">
+					<h1 class="about__heading">
+						<span>Hello,</span>
+						<span>
+							<span in:fade="{{duration: 500, delay: 500}}" class="about__underline-wrapper">my name is Raymond Giang.</span>
+						</span>
+					</h1>
+					<div class="about__description-container" in:fade="{{duration: 500, delay: 1000}}" >
+						<p>
+							I am a developer who loves learning new things. I enjoy
+							working on all sorts of apps on my spare time, especially games. Thanks for visiting my 
+							portfolio site!
+						</p>
+
+						<p>
+							Feel free to download my 
+							<a target="_blank" rel="nofollow noreferrer" href="resume.pdf">resume</a> 
+							to learn more about me. Or send me an 
+							<a href="mailto:raymondgiang@gmail.com">email</a> 
+							with any questions.
+						</p>
+					</div>
+				</div>
+				<div class="about__image-area" in:fade="{{duration: 500, delay: 1000}}" >
+					<img src="about.png" alt="illustration on man leaning on table with a computer on top">
+				</div>
+			</div>
+			<div class="about__skills-container">
+				<div class="about__block-fe">
+					<h2>Front-End Tools Used</h2>
+					<div class="about__logo-container" title="React"><IconifyIcon icon={react} /></div>
+					<div class="about__logo-container" title="Svelte"><IconifyIcon icon={svelte} /></div>
+					<div class="about__logo-container" title="Sass"><IconifyIcon icon={sass} /></div>
+					<div class="about__logo-container" title="JQuery"><IconifyIcon icon={jquery} /></div>
+					<div class="about__logo-container" title="Boostrap"><IconifyIcon icon={bootstrap} /></div>
+				</div>
+				<div class="about__block-be">
+					<h2>Back-End Tools Used</h2>
+					<div class="about__logo-container" title="MySQL"><IconifyIcon icon={mysql} /></div>
+					<div class="about__logo-container" title="MongoDB"><IconifyIcon icon={mongodb} /></div>
+					<div class="about__logo-container" title="Strapi"><IconifyIcon icon={strapi} /></div>
+					<div class="about__logo-container" title="NGINX"><IconifyIcon icon={nginx} /></div>
+				</div>
+				<div class="about__block-lang">
+					<h2>Languages I've Worked With</h2>
+					<div class="about__logo-container" title="HTML5"><IconifyIcon icon={html5} /></div>
+					<div class="about__logo-container" title="CSS3"><IconifyIcon icon={css3} /></div>
+					<div class="about__logo-container" title="JavaScript"><IconifyIcon icon={javascript} /></div>
+					<div class="about__logo-container" title="TypeScript"><IconifyIcon icon={typescript} /></div>
+					<div class="about__logo-container" title="C#"><IconifyIcon icon={cSharp} /></div>
+					<div class="about__logo-container" title="PHP"><IconifyIcon icon={php} /></div>
+					<div class="about__logo-container" title="Python"><IconifyIcon icon={python} /></div>
+					<div class="about__logo-container" title="Java"><IconifyIcon icon={java} /></div>
+				</div>
+				<div class="about__block-other">
+					<h2>Other Tools I've Worked With</h2>
+					<div class="about__logo-container" title="WordPress"><IconifyIcon icon={wordpress} /></div>
+					<div class="about__logo-container" title="ASP.NET"><IconifyIcon icon={asp} /></div>
+					<div class="about__logo-container" title="Unity"><IconifyIcon icon={unity} /></div>
+					<div class="about__logo-container" title="GIT"><IconifyIcon icon={git} /></div>
+					<div class="about__logo-container" title="NPM"><IconifyIcon icon={npm} /></div>
+				</div>
+			</div>
 		</div>
-		<div class="about__block-lang">
-			<h2>Languages I've Worked With</h2>
-			<div class="about__logo-container" title="HTML5"><IconifyIcon icon={html5} /></div>
-			<div class="about__logo-container" title="CSS3"><IconifyIcon icon={css3} /></div>
-			<div class="about__logo-container" title="JavaScript"><IconifyIcon icon={javascript} /></div>
-			<div class="about__logo-container" title="TypeScript"><IconifyIcon icon={typescript} /></div>
-			<div class="about__logo-container" title="C#"><IconifyIcon icon={cSharp} /></div>
-			<div class="about__logo-container" title="PHP"><IconifyIcon icon={php} /></div>
-			<div class="about__logo-container" title="Python"><IconifyIcon icon={python} /></div>
-			<div class="about__logo-container" title="Java"><IconifyIcon icon={java} /></div>
-		</div>
-		<div class="about__block-fe">
-			<h2>Front-End Tools Used</h2>
-			<div class="about__logo-container" title="React"><IconifyIcon icon={react} /></div>
-			<div class="about__logo-container" title="Svelte"><IconifyIcon icon={svelte} /></div>
-			<div class="about__logo-container" title="Sass"><IconifyIcon icon={sass} /></div>
-			<div class="about__logo-container" title="JQuery"><IconifyIcon icon={jquery} /></div>
-			<div class="about__logo-container" title="Boostrap"><IconifyIcon icon={bootstrap} /></div>
-		</div>
-		<div class="about__block-be">
-			<h2>Back-End Tools Used</h2>
-			<div class="about__logo-container" title="MySQL"><IconifyIcon icon={mysql} /></div>
-			<div class="about__logo-container" title="MongoDB"><IconifyIcon icon={mongodb} /></div>
-			<div class="about__logo-container" title="Strapi"><IconifyIcon icon={strapi} /></div>
-			<div class="about__logo-container" title="KeystoneJS"><IconifyIcon icon={keystonejs} /></div>
-		</div>
-		<div class="about__block-other">
-			<h2>Other Tools I've Worked With</h2>
-			<div class="about__logo-container" title="WordPress"><IconifyIcon icon={wordpress} /></div>
-			<div class="about__logo-container" title="ASP.NET"><IconifyIcon icon={asp} /></div>
-			<div class="about__logo-container" title="Unity"><IconifyIcon icon={unity} /></div>
-			<div class="about__logo-container" title="GIT"><IconifyIcon icon={git} /></div>
-			<div class="about__logo-container" title="NPM"><IconifyIcon icon={npm} /></div>
-		</div>
-		<div class="about__block-contact">
-			<p>
-				Feel free to download my 
-				<a target="_blank" rel="nofollow noreferrer" href="resume.pdf">resume</a> 
-				to learn more about me. Or send me an 
-				<a href="mailto:raymondgiang@gmail.com">email</a> 
-				with any questions.
-			</p>
-		</div>
-	</div>
-</section>
+	</section>
+{:else}
+	<section class='about'></section>
+{/if}
 
 <style lang="scss">
 	@import '../../style/theme.scss';
 
 	.about {
-		height: calc(100vh - #{$header-height} - #{$footer-height});
-		min-height: 535px;
-		max-height: 750px;
-		font-size: 15px;
-
 		&__wrapper {
-			display: grid;
-			height: 100%;
-			grid-template-columns: repeat(24, 1fr);
-			grid-template-rows: repeat(16, 6.25%);
+			display: flex;
+			flex-direction: column;
+			padding: 2rem 3rem;
 		}
 
-		&__block-intro {
-			grid-column: 1 / span 7;
-			grid-row: 2 / span 6;
-			background-color: #FFCC99;
+		&__intro-container {
+			padding-bottom: 2rem;
+			display: flex;
 		}
 
-		&__block-lang {
-			grid-column: 9 / span 6;
-			grid-row: 4 / span 10;
-			background-color: lightgreen;
+		&__intro-area {
+			flex: 60%;
+			max-width: 60%;
+			padding-right: 1.5rem;
+			display: flex;
+			flex-direction: column;
 		}
 
-		&__block-fe {
-			grid-column: 16 / span 9;
-			grid-row: 2 / span 4;
-			background-color: lavender;
-		}
-		&__block-be {
-			grid-column: 17 / span 7;
-			grid-row: 7 / span 4;
-			background-color: #FF999B;
+		&__image-area {
+			flex: 40%;
+			max-width: 40%;
+			display: flex;
+
+			img {
+				width: 100%;
+				height: auto;
+				margin: auto;
+			}
 		}
 
-		&__block-other {
-			grid-column: 2 / span 6;
-			grid-row: 9 / span 7;
-			background-color: lightyellow;
+		&__heading {
+			display: flex;
+			flex-direction: column;
+			font-family: $heading-font;
+			color: $accent-color;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 30px;
 		}
 
-		&__block-contact {
-			grid-column: 18 / span 5;
-			grid-row: 12 / span 4;
-			background-color: cyan;
+		&__underline-wrapper {
+			border-bottom: 3.5px solid $primary-color;
 		}
 
-		[class^="about__block"] {
+		&__description-container {
+			color: $text-color;
+
+			p {
+				padding-top: 1.5rem;
+
+				a {
+					@include primary-link;
+					color: $text-color;
+
+					&:hover {
+						color: $accent-color;
+					}
+				}
+			}
+		}
+
+		&__skills-container {
+			background-color: $text-color;
+			color: #FFF;
+			border-top: 5px solid $primary-color;
+			padding: 1rem;
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: center;
-			padding: 1rem;
-			overflow-y: auto;
-			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
 
-			h2 {
+			[class^="about__block"] {
+				flex: 50%;
+				display: flex;
+				flex-flow: row wrap;
+				padding: 1rem;
+
+				h2 {
+					font-size: 20px;
+					flex: 100%;
+					padding-bottom: 1rem;
+				}
+
+				:global(svg) {
+					width: 38px;
+					height: 38px;
+				}
+
+				.about__logo-container {
+					margin: 0 1rem 1rem 0;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 2000px) {
+			min-height: calc(100vh - #{$header-height} - #{$footer-height});
+		}
+
+		@media screen and (max-width: 768px) {
+			&__wrapper {
+				padding: 2rem 1.5rem;
+			}
+
+			&__intro-container {
+				flex-flow: row wrap;
+			}
+
+			&__intro-area {
 				flex: 100%;
-				text-align: center;
-				font-size: 22px;
+				max-width: 100%;
+				padding-right: 0;
 			}
 
-			&.about__block-intro, &.about__block-contact {
-				flex-direction: column;
-			}
-		}
-
-		&__logo-container {
-			padding: 0.5rem;
-			width: 65px;
-			height: 65px;
-
-			:global(svg) {
-				width: 100%;
-				height: 100%;
-			}
-		}
-
-		@media screen and (max-width: 1000px) {
-			max-height: unset;
-
-			&__wrapper {
-				grid-auto-flow: dense;
+			&__heading {
+				font-size: 25px;
 			}
 
-			&__block-intro {
-				grid-column: span 11;
-				grid-row: span 8;
+			&__image-area {
+				flex: 100%;
+				max-width: 100%;
+				order: -1;
+				padding-bottom: 1rem;
+
+				img {
+					width: 60%;
+				}
 			}
 
-			&__block-lang {
-				grid-column: span 13;
-				grid-row: span 8;
-			}
+			&__skills-container {
+				[class^="about__block"] {
+					flex: 100%;
+					text-align: center;
+					justify-content: center;
 
-			&__block-fe {
-				grid-column: span 13;
-				grid-row: span 4;
-			}
-
-			&__block-be {
-				grid-column: span 11;
-				grid-row: span 4;
-			}
-
-			&__block-other {
-				grid-column: span 15;
-				grid-row: span 8;
-			}
-
-			&__block-contact {
-				grid-column: span 9;
-				grid-row: span 4;
-			}
-		}
-
-		@media screen and (max-width: 668px) {
-			max-height: unset;
-			min-height: 1000px;
-
-			&__wrapper {
-				grid-auto-flow: dense;
-			}
-
-			&__block-intro {
-				grid-column: 1 / -1;
-				grid-row: span 2;
-				font-size: 16px;
-			}
-
-			&__block-lang {
-				grid-column: 1 / -1;
-				grid-row: span 3;
-			}
-
-			&__block-fe {
-				grid-column: 1 / -1;
-				grid-row: span 3;
-			}
-
-			&__block-be {
-				grid-column: 1 / -1;
-				grid-row: span 3;
-			}
-
-			&__block-other {
-				grid-column: 1 / -1;
-				grid-row: span 3;
-			}
-
-			&__block-contact {
-				grid-column: 1 / -1;
-				grid-row: span 2;
+					:global(svg) {
+						width: 25px;
+						height: 25px;
+					}
+				}
 			}
 		}
 
 		@media screen and (max-width: 500px) {
-			min-height: 1400px;
+			&__image-area {
+				img {
+					width: 80%;
+				}
+			}
 		}
 	}
 </style>

@@ -57,16 +57,21 @@
 
     .ss-slider {
         overflow: hidden;
-        width: 100%;
+        width: auto;
         padding: 1rem 0 1.5rem;
         margin: 0 1rem;
+        position: relative;
 
         &__image-container {
             @include image-container;
             max-height: 100px;
             background: #FFF;
             width: 160px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 12px -8px rgba(0, 0, 0, 0.8);
+        }
+
+        @media screen and (max-width: 1000px) {
+            margin: 0;
         }
     }
 </style>

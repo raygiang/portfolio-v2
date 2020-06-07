@@ -3,6 +3,7 @@ title: CityAxess Email Builder
 pubdate: 2020-06-01
 image: main.png
 screenshots: ["main.png", "screen1.png", "screen2.png", "screen3.png", "screen4.png"]
+tags: ["Strapi", "React"]
 link: https://cityaxess-v2.axesscreative.ca
 github: https://github.com/raygiang/hack-the-curve-v2
 ---

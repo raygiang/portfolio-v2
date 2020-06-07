@@ -29,8 +29,6 @@
 	.error {
 		height: calc(100vh - #{$header-height} - #{$footer-height});
 		max-height: 750px;
-		background-image: url("../background.png");
-		@include background-image;
 		display: flex;
 
 		&__wrapper {

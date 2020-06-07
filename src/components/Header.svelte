@@ -78,7 +78,7 @@
 
 		&__nav-link {
 			text-decoration: none;
-			color: #000;
+			color: $secondary-color;
 			
 			&[aria-current] {
 				position: relative;
@@ -148,7 +148,7 @@
 
 			:global(svg) {
 				font-size: 25px;
-				color: #000;
+				color: $secondary-color;
 				width: 100%;
 				height: 100%;
 
@@ -183,6 +183,10 @@
 			&__nav-link {
 				&:not(.header__name) {
 					color: #FFF;
+					
+					&:hover {
+						color: $primary-color;
+					}
 				}
 			}
 

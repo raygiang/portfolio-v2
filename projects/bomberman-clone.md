@@ -3,6 +3,7 @@ title: Bomberman Clone
 pubdate: 2020-05-30
 image: main.png
 screenshots: ["main.png", "screen1.png", "screen2.png"]
+tags: ["Cocos Creator", "Typescript"]
 link: https://test-game.raymondgiang.com
 github: https://github.com/raygiang/test-bomberman-clone
 ---
