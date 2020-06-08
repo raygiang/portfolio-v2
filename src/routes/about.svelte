@@ -230,11 +230,11 @@
 			}
 
 			&__intro-container {
-				flex-flow: row wrap;
+				flex-flow: column nowrap;
 			}
 
 			&__intro-area {
-				flex: 100%;
+				flex: 1;
 				max-width: 100%;
 				padding-right: 0;
 			}
@@ -244,14 +244,12 @@
 			}
 
 			&__image-area {
-				flex: 100%;
-				max-width: 100%;
+				@include image-container;
+				flex: 1;
+				max-width: 80%;
 				order: -1;
 				padding-bottom: 1rem;
-
-				img {
-					width: 60%;
-				}
+				margin: 0 auto;
 			}
 
 			&__skills-container {

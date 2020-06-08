@@ -24,9 +24,14 @@
 
 	.home {
 		display: flex;
+		background-image: linear-gradient(to bottom right, #133E53, #287EA9);
 		
 		@media screen and (max-width: 2000px) {
 			min-height: calc(100vh - #{$header-height} - #{$footer-height});
+		}
+
+		@media screen and (max-width: 768px) {
+			min-height: calc(100vh - #{$mobile-header-height} - #{$footer-height});
 		}
 	}
 </style>
