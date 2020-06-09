@@ -35,12 +35,13 @@
         </div>
         <div class="silhouette-container" aira-hidden="true"></div>
         <div class="intro">
-            <h1 class="heading">
-                <span>Hey there!</span>
-                <span>My name is Raymond.</span>
-                <span>I make websites and games.</span>
-            </h1>
-            <button class="play-button" on:click={toggleGame}>Play Game</button>
+            <div class="page-wrapper">
+                <h1 class="heading">
+                    <span>Hey there!</span>
+                    <span>Welcome to my portfolio.</span>
+                </h1>
+                <button class="play-button" on:click={toggleGame}>Play Game</button>
+            </div>
         </div>
     </div>
 {/if}
@@ -70,6 +71,7 @@
             position: absolute;
             top: 0;
             left: 0;
+            z-index: -1;
         }
 
         .silhouette-container {
@@ -79,6 +81,7 @@
         }
         
         .light-container {
+            background-image: linear-gradient(to bottom right, #133E53, #287EA9);
             $numLights: 50;
             overflow: hidden;
 
@@ -90,7 +93,7 @@
                     &:nth-child(#{$i}) {
                         $lightDiameter: random(5) + px;
                         $lightColour: random(360);
-                        $bottomPos: percentage(random(10) / 100);
+                        $bottomPos: percentage(random(22) / 100);
                         $leftPos: percentage(random());
                         $flickerDuration: random(3) + s;
                         $animationDuration: random(50) + 20s;
@@ -132,11 +135,13 @@
         }
 
         .intro {
-            position: absolute;
-            left: 30px;
-            top: 15%;
             display: flex;
             flex-direction: column;
+
+            .page-wrapper {
+                padding: 0 1rem;
+                padding-top: 5%;
+            }
 
             .heading {
                 display: flex;
@@ -156,6 +161,10 @@
 
         @media screen and (max-width: 500px) {
             .intro {
+                .page-wrapper {
+                    padding-top: 15%;
+                }
+
                 .heading {
                     font-size: 25px;
                 }
