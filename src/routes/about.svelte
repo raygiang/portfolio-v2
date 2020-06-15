@@ -25,6 +25,7 @@
 	// Back End
 	import mysql from '@iconify/icons-simple-icons/mysql';
 	import mongodb from '@iconify/icons-simple-icons/mongodb';
+	import firebase from '@iconify/icons-simple-icons/firebase';
 	import strapi from '@iconify/icons-simple-icons/strapi';
 	import nginx from '@iconify/icons-simple-icons/nginx';
 
@@ -90,6 +91,7 @@
 					<h2>Back-End Tools Used</h2>
 					<div class="about__logo-container" title="MySQL"><IconifyIcon icon={mysql} /></div>
 					<div class="about__logo-container" title="MongoDB"><IconifyIcon icon={mongodb} /></div>
+					<div class="about__logo-container" title="Firebase"><IconifyIcon icon={firebase} /></div>
 					<div class="about__logo-container" title="Strapi"><IconifyIcon icon={strapi} /></div>
 					<div class="about__logo-container" title="NGINX"><IconifyIcon icon={nginx} /></div>
 				</div>

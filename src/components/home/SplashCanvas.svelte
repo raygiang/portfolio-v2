@@ -33,14 +33,14 @@
                  <div class="light"></div>
             {/each}
         </div>
-        <div class="silhouette-container" aira-hidden="true"></div>
+        <div class="silhouette-container" aria-hidden="true"></div>
         <div class="intro">
             <div class="page-wrapper">
                 <h1 class="heading">
                     <span>Hey there!</span>
                     <span>Welcome to my portfolio.</span>
+                    <span>I make websites and games.</span>
                 </h1>
-                <button class="play-button" on:click={toggleGame}>Play Game</button>
             </div>
         </div>
     </div>
@@ -95,7 +95,6 @@
                         $lightColour: random(360);
                         $bottomPos: percentage(random(22) / 100);
                         $leftPos: percentage(random());
-                        $flickerDuration: random(3) + s;
                         $animationDuration: random(50) + 20s;
                         $flickerDuration: random(3) + 2s;
 
@@ -151,12 +150,6 @@
                 color: #FFF;
                 text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
             }
-
-            .play-button {
-                @include primary-button;
-                margin-top: 1rem;
-                width: max-content;
-            }
         }
 
         @media screen and (max-width: 500px) {
@@ -167,10 +160,6 @@
 
                 .heading {
                     font-size: 25px;
-                }
-
-                .play-button {
-                    display: none;
                 }
             }
         }
