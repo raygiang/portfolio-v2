@@ -39,6 +39,6 @@
     "svelte": "^3.0.0",
     "svelte-awesome": "^2.3.0",
     "svelte-preprocess": "^3.7.4",
-    "swiper": "^5.4.2"
+    "swiper": "^6.5.1"
   }
 }
